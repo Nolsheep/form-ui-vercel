@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>แบบฟอร์มประเมินความพึงพอใจ</title>
 
-  <!-- ฟอนต์ทางการ -->
+  <!-- ฟอนต์ Sarabun -->
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -17,16 +17,17 @@
 
     html, body {
       font-family: 'Sarabun', sans-serif;
-      background-color: #f4f6f9;
+      background-color: #f5f6fa;
       color: #333;
       width: 100%;
       overflow-x: hidden;
     }
 
     body {
-      padding: 40px 16px;
+      padding: 24px 16px;
       display: flex;
       justify-content: center;
+      align-items: flex-start;
       min-height: 100vh;
     }
 
@@ -36,8 +37,8 @@
       border-radius: 16px;
       max-width: 860px;
       width: 100%;
-      padding: 24px 32px 32px 32px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      padding: 24px 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
     }
 
     .form-title {
@@ -50,34 +51,32 @@
 
     .iframe-wrapper {
       width: 100%;
-      overflow: hidden;
-      border-radius: 12px;
+      overflow-x: hidden;
     }
 
     iframe {
-      display: block;
       width: 100%;
-      min-height: 2600px;
+      max-width: 100%;
+      min-height: 2800px;
       border: none;
       border-radius: 12px;
     }
 
     @media (max-width: 768px) {
       body {
-        padding: 24px 12px;
+        padding: 16px 8px;
       }
 
       .form-container {
-        padding: 20px;
+        padding: 16px 12px;
       }
 
       .form-title {
         font-size: 1.3rem;
-        margin-bottom: 16px;
       }
 
       iframe {
-        min-height: 2400px;
+        min-height: 2900px;
       }
     }
   </style>
@@ -89,15 +88,15 @@
       <iframe
         id="formIframe"
         src="https://docs.google.com/forms/d/e/1FAIpQLSduGs5sER_A8hKS_zwo9a9_Md_ckpV9SNnFC88fcWgLnz5k7Q/viewform?embedded=true"
-        title="ฟอร์มประเมินความพึงพอใจ"
+        title="ฟอร์มประเมิน"
         scrolling="yes">
         กำลังโหลดแบบฟอร์ม...
       </iframe>
     </div>
   </div>
 
-  <!-- ✅ JavaScript เพื่อ scroll กลับไปด้านบนเมื่อเปลี่ยนหน้าในแบบฟอร์ม -->
   <script>
+    // Scroll กลับบนสุดทุกครั้งที่โหลดหน้าใหม่ในฟอร์ม
     document.addEventListener("DOMContentLoaded", function () {
       const formFrame = document.getElementById("formIframe");
       formFrame.addEventListener("load", () => {
